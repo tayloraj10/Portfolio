@@ -1,10 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:full_screen_image/full_screen_image.dart';
 import 'package:portfolio/components/nav_bar.dart';
 import 'package:portfolio/projects.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class GIS extends StatelessWidget {
   const GIS({Key? key}) : super(key: key);

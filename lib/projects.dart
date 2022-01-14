@@ -88,9 +88,9 @@ List nfts = [
     'link':
         'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/108066343708887524339820302445796842548124428363067039062180393642743721623553',
     'collection': 'Urban Maps'
-  }
+  },
 ];
 
 List nftCollections = [
-  {'name': 'Urban Maps'}
+  {'name': 'Urban Maps', 'link': 'https://opensea.io/collection/urban-maps'},
 ];
