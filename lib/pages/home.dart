@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/components/nav_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -92,6 +93,25 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'This website was built using Flutter',
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                SvgPicture.asset(
+                  'assets/flutter-logo.svg',
+                  height: 20,
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
