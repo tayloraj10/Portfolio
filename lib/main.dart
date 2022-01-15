@@ -24,8 +24,7 @@ class MyApp extends StatelessWidget {
           scrollbarTheme: ScrollbarThemeData().copyWith(
             thumbColor: MaterialStateProperty.all(Colors.grey[300]),
           )),
-      // home: Home(),
-      home: NFTS(),
+      home: Home(),
     );
   }
 }
