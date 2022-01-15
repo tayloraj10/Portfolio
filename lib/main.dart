@@ -17,13 +17,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          textTheme: GoogleFonts.soraTextTheme(
-            Theme.of(context).textTheme,
-          ),
-          scaffoldBackgroundColor: Colors.black,
-          scrollbarTheme: ScrollbarThemeData().copyWith(
-            thumbColor: MaterialStateProperty.all(Colors.grey[300]),
-          )),
+        textTheme: GoogleFonts.soraTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        scaffoldBackgroundColor: Colors.black,
+        scrollbarTheme: ScrollbarThemeData().copyWith(
+          thumbColor: MaterialStateProperty.all(Colors.grey[300]),
+        ),
+        canvasColor: Colors.grey[700],
+      ),
       home: Home(),
     );
   }

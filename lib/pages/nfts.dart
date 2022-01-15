@@ -12,40 +12,39 @@ class NFTS extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          constraints: BoxConstraints(maxWidth: 1200),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 40,
-                ),
-                child: NavBar(
-                  nfts: true,
-                ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 30,
               ),
-              SizedBox(
-                height: 40,
+              child: NavBar(
+                nfts: true,
               ),
-              Text('Collections',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold)),
-              SizedBox(
-                height: 40,
-              ),
-              Expanded(
-                  child: ScrollConfiguration(
-                behavior: ScrollConfiguration.of(context).copyWith(
-                    dragDevices: {
-                      PointerDeviceKind.mouse,
-                      PointerDeviceKind.touch
-                    }),
-                child: Scrollbar(
-                  showTrackOnHover: true,
-                  isAlwaysShown: true,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Text('Collections',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold)),
+            SizedBox(
+              height: 40,
+            ),
+            Expanded(
+                child: ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
+                PointerDeviceKind.mouse,
+                PointerDeviceKind.touch
+              }),
+              child: Scrollbar(
+                showTrackOnHover: true,
+                isAlwaysShown: true,
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: 1200),
                   child: ListView(
                     children: [
                       for (Map collection in nftCollections)
@@ -149,9 +148,9 @@ class NFTS extends StatelessWidget {
                     ],
                   ),
                 ),
-              ))
-            ],
-          ),
+              ),
+            ))
+          ],
         ),
       ),
     );

@@ -11,40 +11,39 @@ class Programming extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          constraints: BoxConstraints(maxWidth: 1200),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 40,
-                ),
-                child: NavBar(
-                  programming: true,
-                ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 30,
               ),
-              SizedBox(
-                height: 40,
+              child: NavBar(
+                programming: true,
               ),
-              Text('Projects',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold)),
-              SizedBox(
-                height: 20,
-              ),
-              Expanded(
-                  child: ScrollConfiguration(
-                behavior: ScrollConfiguration.of(context).copyWith(
-                    dragDevices: {
-                      PointerDeviceKind.mouse,
-                      PointerDeviceKind.touch
-                    }),
-                child: Scrollbar(
-                  showTrackOnHover: true,
-                  isAlwaysShown: true,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Text('Projects',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold)),
+            SizedBox(
+              height: 20,
+            ),
+            Expanded(
+                child: ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
+                PointerDeviceKind.mouse,
+                PointerDeviceKind.touch
+              }),
+              child: Scrollbar(
+                showTrackOnHover: true,
+                isAlwaysShown: true,
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: 1200),
                   child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: programmingProjects.length,
@@ -159,9 +158,9 @@ class Programming extends StatelessWidget {
                         );
                       }),
                 ),
-              ))
-            ],
-          ),
+              ),
+            ))
+          ],
         ),
       ),
     );

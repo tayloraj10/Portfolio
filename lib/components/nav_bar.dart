@@ -7,7 +7,7 @@ import 'package:portfolio/pages/nfts.dart';
 import 'package:portfolio/pages/programming.dart';
 import 'package:portfolio/pages/resume.dart';
 
-class NavBar extends StatelessWidget {
+class NavBar extends StatefulWidget {
   bool home;
   bool programming;
   bool gis;
@@ -22,7 +22,24 @@ class NavBar extends StatelessWidget {
       this.resume = false});
 
   @override
+  State<NavBar> createState() => _NavBarState();
+}
+
+class _NavBarState extends State<NavBar> {
+  String dropdownValue = '';
+  List<String> pages = ['Programming', 'GIS', 'NFTs', 'Resume'];
+
+  void setDropdownValue() {
+    if (widget.home) setState(() => dropdownValue = 'Programming');
+    if (widget.programming) setState(() => dropdownValue = 'Programming');
+    if (widget.gis) setState(() => dropdownValue = 'GIS');
+    if (widget.nfts) setState(() => dropdownValue = 'NFTs');
+    if (widget.resume) setState(() => dropdownValue = 'Resume');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    setDropdownValue();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -36,83 +53,129 @@ class NavBar extends StatelessWidget {
           child: Text('Home',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: home ? 20 : 16,
-                  fontWeight: home ? FontWeight.bold : null)),
+                  fontSize: widget.home ? 20 : 16,
+                  fontWeight: widget.home ? FontWeight.bold : null)),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Programming()),
-                );
-              },
-              child: Text(
-                'Programming',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: programming ? 20 : 16,
-                    fontWeight: programming ? FontWeight.bold : null),
+        MediaQuery.of(context).size.width > 500
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Programming()),
+                      );
+                    },
+                    child: Text(
+                      'Programming',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: widget.programming ? 20 : 16,
+                          fontWeight:
+                              widget.programming ? FontWeight.bold : null),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => GIS()),
+                      );
+                    },
+                    child: Text(
+                      'GIS',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: widget.gis ? 20 : 16,
+                          fontWeight: widget.gis ? FontWeight.bold : null),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NFTS()),
+                      );
+                    },
+                    child: Text(
+                      'NFTs',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: widget.nfts ? 20 : 16,
+                          fontWeight: widget.nfts ? FontWeight.bold : null),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Resume()),
+                      );
+                    },
+                    child: Text(
+                      'Resume',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: widget.resume ? 20 : 16,
+                          fontWeight: widget.resume ? FontWeight.bold : null),
+                    ),
+                  )
+                ],
+              )
+            : DropdownButton<String>(
+                value: dropdownValue,
+                elevation: 16,
+                style: const TextStyle(color: Colors.white),
+                underline: Container(
+                  height: 2,
+                  color: Colors.white,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue = newValue!;
+                  });
+                  if (newValue == 'Programming') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Programming()),
+                    );
+                  }
+                  if (newValue == 'GIS') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GIS()),
+                    );
+                  }
+                  if (newValue == 'NFTs') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NFTS()),
+                    );
+                  }
+                  if (newValue == 'Resume') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Resume()),
+                    );
+                  }
+                },
+                items: pages.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
-            ),
-            SizedBox(
-              width: 30,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => GIS()),
-                );
-              },
-              child: Text(
-                'GIS',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: gis ? 20 : 16,
-                    fontWeight: gis ? FontWeight.bold : null),
-              ),
-            ),
-            SizedBox(
-              width: 30,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => NFTS()),
-                );
-              },
-              child: Text(
-                'NFTs',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: nfts ? 20 : 16,
-                    fontWeight: nfts ? FontWeight.bold : null),
-              ),
-            ),
-            SizedBox(
-              width: 30,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Resume()),
-                );
-              },
-              child: Text(
-                'Resume',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: resume ? 20 : 16,
-                    fontWeight: resume ? FontWeight.bold : null),
-              ),
-            )
-          ],
-        ),
       ],
     );
   }

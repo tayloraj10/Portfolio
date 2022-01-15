@@ -13,7 +13,7 @@ class Resume extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.symmetric(
           vertical: 20,
-          horizontal: 40,
+          horizontal: 30,
         ),
         child: NavBar(
           resume: true,

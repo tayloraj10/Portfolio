@@ -11,39 +11,38 @@ class GIS extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          constraints: BoxConstraints(maxWidth: 1200),
-          child: Column(
-            children: [
-              Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 40,
-                  ),
-                  child: NavBar(
-                    gis: true,
-                  )),
-              SizedBox(
-                height: 40,
-              ),
-              Text('Projects',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold)),
-              SizedBox(
-                height: 20,
-              ),
-              Expanded(
-                  child: ScrollConfiguration(
-                behavior: ScrollConfiguration.of(context).copyWith(
-                    dragDevices: {
-                      PointerDeviceKind.mouse,
-                      PointerDeviceKind.touch
-                    }),
-                child: Scrollbar(
-                  showTrackOnHover: true,
-                  isAlwaysShown: true,
+        child: Column(
+          children: [
+            Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 30,
+                ),
+                child: NavBar(
+                  gis: true,
+                )),
+            SizedBox(
+              height: 30,
+            ),
+            Text('Projects',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold)),
+            SizedBox(
+              height: 20,
+            ),
+            Expanded(
+                child: ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
+                PointerDeviceKind.mouse,
+                PointerDeviceKind.touch
+              }),
+              child: Scrollbar(
+                showTrackOnHover: true,
+                isAlwaysShown: true,
+                child: Container(
+                  constraints: BoxConstraints(maxWidth: 1200),
                   child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: gisProjects.length,
@@ -102,9 +101,9 @@ class GIS extends StatelessWidget {
                         );
                       }),
                 ),
-              ))
-            ],
-          ),
+              ),
+            ))
+          ],
         ),
       ),
     );
