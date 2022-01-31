@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -6,7 +7,12 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:portfolio/constants.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  List<Color> colorizeColors = [
+    Colors.blue,
+    Colors.purple,
+    Colors.yellow,
+    Colors.red,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -31,23 +37,45 @@ class Home extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Taylor Johnson's Portfolio Website",
-                        style: TextStyle(fontSize: 32, color: Colors.white),
-                        textAlign: MediaQuery.of(context).size.width <= 500
-                            ? TextAlign.center
-                            : null,
+                      AnimatedTextKit(
+                        animatedTexts: [
+                          ColorizeAnimatedText(
+                            "Taylor Johnson's Portfolio Website",
+                            textStyle: TextStyle(fontSize: 32),
+                            colors: colorizeColors,
+                            speed: Duration(milliseconds: 300),
+                          ),
+                        ],
+                        repeatForever: true,
                       ),
+                      // Text(
+                      //   "Taylor Johnson's Portfolio Website",
+                      //   style: TextStyle(fontSize: 32, color: Colors.white),
+                      //   textAlign: MediaQuery.of(context).size.width <= 500
+                      //       ? TextAlign.center
+                      //       : null,
+                      // ),
                       SizedBox(
                         height: 8,
                       ),
-                      Text(
-                        "Please enjoy a selection of projects I've worked on",
+                      DefaultTextStyle(
                         style: TextStyle(fontSize: 18, color: Colors.white),
-                        textAlign: MediaQuery.of(context).size.width <= 500
-                            ? TextAlign.center
-                            : null,
+                        child: AnimatedTextKit(
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                                "Please enjoy a selection of projects I've worked on",
+                                speed: Duration(milliseconds: 75)),
+                          ],
+                          repeatForever: true,
+                        ),
                       ),
+                      // Text(
+                      //   "Please enjoy a selection of projects I've worked on",
+                      //   style: TextStyle(fontSize: 18, color: Colors.white),
+                      //   textAlign: MediaQuery.of(context).size.width <= 500
+                      //       ? TextAlign.center
+                      //       : null,
+                      // ),
                     ],
                   ),
                   SizedBox(
@@ -94,7 +122,7 @@ class Home extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.only(bottom: 40),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

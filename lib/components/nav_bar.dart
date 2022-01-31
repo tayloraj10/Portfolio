@@ -27,10 +27,10 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   String dropdownValue = '';
-  List<String> pages = ['Programming', 'GIS', 'NFTs', 'Resume'];
+  List<String> pages = ['', 'Programming', 'GIS', 'NFTs', 'Resume'];
 
   void setDropdownValue() {
-    if (widget.home) setState(() => dropdownValue = 'Programming');
+    if (widget.home) setState(() => dropdownValue = '');
     if (widget.programming) setState(() => dropdownValue = 'Programming');
     if (widget.gis) setState(() => dropdownValue = 'GIS');
     if (widget.nfts) setState(() => dropdownValue = 'NFTs');
@@ -43,91 +43,107 @@ class _NavBarState extends State<NavBar> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Home()),
-            );
-          },
-          child: Text('Home',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: widget.home ? 20 : 16,
-                  fontWeight: widget.home ? FontWeight.bold : null)),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
+              );
+            },
+            child: Text('Home',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: widget.home ? 20 : 16,
+                    fontWeight: widget.home ? FontWeight.bold : null)),
+          ),
         ),
         MediaQuery.of(context).size.width > 500
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Programming()),
-                      );
-                    },
-                    child: Text(
-                      'Programming',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: widget.programming ? 20 : 16,
-                          fontWeight:
-                              widget.programming ? FontWeight.bold : null),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Programming()),
+                        );
+                      },
+                      child: Text(
+                        'Programming',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: widget.programming ? 20 : 16,
+                            fontWeight:
+                                widget.programming ? FontWeight.bold : null),
+                      ),
                     ),
                   ),
                   SizedBox(
                     width: 30,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => GIS()),
-                      );
-                    },
-                    child: Text(
-                      'GIS',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: widget.gis ? 20 : 16,
-                          fontWeight: widget.gis ? FontWeight.bold : null),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => GIS()),
+                        );
+                      },
+                      child: Text(
+                        'GIS',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: widget.gis ? 20 : 16,
+                            fontWeight: widget.gis ? FontWeight.bold : null),
+                      ),
                     ),
                   ),
                   SizedBox(
                     width: 30,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => NFTS()),
-                      );
-                    },
-                    child: Text(
-                      'NFTs',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: widget.nfts ? 20 : 16,
-                          fontWeight: widget.nfts ? FontWeight.bold : null),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => NFTS()),
+                        );
+                      },
+                      child: Text(
+                        'NFTs',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: widget.nfts ? 20 : 16,
+                            fontWeight: widget.nfts ? FontWeight.bold : null),
+                      ),
                     ),
                   ),
                   SizedBox(
                     width: 30,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Resume()),
-                      );
-                    },
-                    child: Text(
-                      'Resume',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: widget.resume ? 20 : 16,
-                          fontWeight: widget.resume ? FontWeight.bold : null),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Resume()),
+                        );
+                      },
+                      child: Text(
+                        'Resume',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: widget.resume ? 20 : 16,
+                            fontWeight: widget.resume ? FontWeight.bold : null),
+                      ),
                     ),
                   )
                 ],

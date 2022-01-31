@@ -27,17 +27,17 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_text_kit: ^4.2.1
   cupertino_icons: ^1.0.2
   draggable_scrollbar: ^0.1.0
   flutter:
     sdk: flutter
+  flutter_svg: ^1.0.1
   font_awesome_flutter: ^9.2.0
   full_screen_image: ^1.0.2
   google_fonts: ^2.2.0
   syncfusion_flutter_pdfviewer: ^19.4.42-beta
   url_launcher: ^6.0.18
-  flutter_svg: ^1.0.1
-
 
 dev_dependencies:
   flutter_lints: ^1.0.0
