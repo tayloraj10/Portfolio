@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Taylor Johnson's Portfolio",
       theme: ThemeData(
         textTheme: GoogleFonts.soraTextTheme(
           Theme.of(context).textTheme,
