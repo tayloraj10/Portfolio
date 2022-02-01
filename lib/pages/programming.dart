@@ -66,56 +66,89 @@ class Programming extends StatelessWidget {
                                         fontWeight: FontWeight.bold),
                                   ),
                                   if (programmingProjects[index]
-                                      .containsKey("app_links"))
+                                          .containsKey("app_links") ||
+                                      programmingProjects[index]
+                                          .containsKey("repo"))
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 12),
+                                          vertical: 10),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          GestureDetector(
-                                            onTap: () {
-                                              launch(programmingProjects[index]
-                                                  ['app_links']['ios']);
-                                            },
-                                            child: Icon(
-                                                FontAwesomeIcons.appStore,
-                                                color: Colors.blue,
-                                                size: 40),
-                                          ),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          GestureDetector(
-                                            onTap: () {
-                                              launch(programmingProjects[index]
-                                                  ['app_links']['android']);
-                                            },
-                                            child: Icon(
-                                                FontAwesomeIcons.googlePlay,
-                                                color: Colors.green,
-                                                size: 40),
-                                          )
+                                          if (programmingProjects[index]
+                                              .containsKey("app_links"))
+                                            GestureDetector(
+                                              onTap: () {
+                                                launch(
+                                                    programmingProjects[index]
+                                                        ['app_links']['ios']);
+                                              },
+                                              child: Icon(
+                                                  FontAwesomeIcons.appStore,
+                                                  color: Colors.blue,
+                                                  size: 40),
+                                            ),
+                                          if (programmingProjects[index]
+                                              .containsKey("app_links"))
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                          if (programmingProjects[index]
+                                              .containsKey("app_links"))
+                                            GestureDetector(
+                                              onTap: () {
+                                                launch(
+                                                    programmingProjects[index]
+                                                            ['app_links']
+                                                        ['android']);
+                                              },
+                                              child: Icon(
+                                                  FontAwesomeIcons.googlePlay,
+                                                  color: Colors.green,
+                                                  size: 40),
+                                            ),
+                                          if (programmingProjects[index]
+                                              .containsKey("app_links"))
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                          if (programmingProjects[index]
+                                                  .containsKey("repo") &&
+                                              programmingProjects[index]
+                                                      ['repo'] !=
+                                                  '')
+                                            GestureDetector(
+                                              onTap: () {
+                                                launch(
+                                                    programmingProjects[index]
+                                                        ['repo']);
+                                              },
+                                              child: Icon(
+                                                  FontAwesomeIcons.github,
+                                                  color: Colors.white,
+                                                  size: 40),
+                                            ),
                                         ],
                                       ),
                                     ),
-                                  if (programmingProjects[index]['link'] != '')
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                  if (programmingProjects[index]['link'] != '')
-                                    GestureDetector(
-                                      onTap: () {
-                                        launch(
-                                            programmingProjects[index]['link']);
-                                      },
-                                      child: Text(
-                                        programmingProjects[index]['link'],
-                                        style: TextStyle(
-                                            color: Colors.blue,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold),
+                                  if (programmingProjects[index]
+                                          .containsKey("link") &&
+                                      programmingProjects[index]['link'] != '')
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 6),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          launch(programmingProjects[index]
+                                              ['link']);
+                                        },
+                                        child: Text(
+                                          programmingProjects[index]['link'],
+                                          style: TextStyle(
+                                              color: Colors.blue,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
                                       ),
                                     ),
                                   SizedBox(

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/gis.dart';
 import 'package:portfolio/pages/home.dart';
-import 'package:portfolio/pages/nfts.dart';
-import 'package:portfolio/pages/programming.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {

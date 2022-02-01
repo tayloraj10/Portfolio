@@ -2,23 +2,24 @@ Map sample = {
   'name': '',
   'description': '',
   'image': 'assets/programming/',
-  'link': ''
+  'link': '',
+  'app_links': {'android': '', 'ios': ''},
+  'repo': ''
 };
 
 List programmingProjects = [
   {
     'name': 'mProve Sports',
     'description':
-        "This is a new mobile app I'm working as for a startup company seeking to connect players looking for private sports coaching to qualified coaches",
-    'image': '',
-    'link': ''
+        "This is a new cross-platform mobile app I'm working on with a startup seeking to connect players looking for private sports coaching to qualified coaches.\n\nI'm building this app using Flutter to allow for one code base to be used to deploy android and iOS apps simultaneously.\n\nThe app is currently in development and beginning alpha testing. It will be available on the google play store and app store soon!",
+    'image': 'assets/programming/mprove.png',
   },
   {
     'name': 'UPick',
     'description':
-        'A mobile app that allows users to find new movies to watch either by themselves or by finding common interests with friends and family. Availabe in the app store as UPick Movies and in the google play store as UPick.',
+        "A mobile app that allows users to find new movies to watch either by themselves or by finding common interests with friends and family. Available in the app store as UPick Movies and in the google play store as UPick.\n\nThis was the first app I wrote using Google's Flutter framework for cross-platform mobile development. UPick was primarily a pet project to see if I could design, build, and deploy a mobile app.\n\nThis project required a good deal of effort on the backend. First I had to locate APIs that would allow me to get movie information and poster data. I then wrote a python script to pull fresh data from these APIs, merge the data into a usable format, and then truncate and replace the data in the databases the frontend mobile apps relied on. I used Firebase for backend services and databasing for UPick.",
     'image': 'assets/programming/upick.png',
-    'link': '',
+    'repo': 'https://github.com/tayloraj10/UPick',
     'app_links': {
       'android':
           'https://play.google.com/store/apps/details?id=com.upick.upickapp',
@@ -28,26 +29,42 @@ List programmingProjects = [
   {
     'name': 'Phlask',
     'description':
-        'Phlask is an open-source, non-profit project for finding and sharing water sources within the Philadelphia area. The project has the dual intention of challenging the social norm of having to purchase water when there is a public or private water tap present and of providing a technological platform for the public to locate and share known sources of water.Phlask is an open-source, non-profit project for finding and sharing water sources within the Philadelphia area. The project has the dual intention of challenging the social norm of having to purchase water when there is a public or private water tap present and of providing a technological platform for the public to locate and share known sources of water.',
+        'Phlask is an open-source, non-profit project for finding and sharing water sources within the Philadelphia area. The project has the dual intention of challenging the social norm of having to purchase water when there is a public or private water tap present and of providing a technological platform for the public to locate and share known sources of water. This project started through Code for Philly (a group of civic minded technologists building projects for the social good)\n\nI joined the project shortly after it began as the first developer. I built the first web app (pictured below) using mostly vanilla JavaScript and Google Maps APIs. As the project grew we decided to do a re-write in react and I helped port over my existing code and wrote some of the other front-end features. During this re-write I transitioned over to maintaining the databases behind the web app and leading data enhancement and gathering projects.',
     'image': 'assets/programming/phlask.png',
-    'link': 'https://phlask.me/'
+    'link': 'https://phlask.me/',
+    'repo': 'https://github.com/phlask/phlask-map'
+  },
+  {
+    'name': 'Online Geocoder',
+    'image': 'assets/programming/online-geocoder.png',
+    'description':
+        'A custom geocoding web application I wrote for a previous job for internal use. We would often need to get coordinates for large lists of addresses on a daily basis. When the online service we had been using went down I took the opportunity to write my own and then we started using it daily in place of the old service.',
+    'repo': 'https://github.com/online-geocoder/online-geocoder.github.io',
+    'link': 'https://online-geocoder.github.io/'
   },
   {
     'name': 'RDP Python Algorithm',
     'description':
-        'An implementation of the Ramer–Douglas–Peucker algorithm for generalizing cartographic features in Python',
+        'An implementation of the Ramer–Douglas–Peucker algorithm for generalizing cartographic features in Python. I wrote this script for a project in a Python class I took in college.',
     'image': 'assets/programming/rdp.png',
-    'link': ''
+    'repo': 'https://github.com/tayloraj10/RDP'
+  },
+  {
+    'name': 'Old Portfolio Site',
+    'description': '',
+    'image': 'assets/programming/old_portfolio.png',
+    'link': 'https://tayloraj10.github.io',
+    'repo': 'https://github.com/tayloraj10/tayloraj10.github.io'
   }
 ];
 
 List gisProjects = [
   {
-    'name': 'Temple Univeristy Bike Lanes',
+    'name': 'Temple University Bike Lanes',
     'image': 'assets/gis/Site Selection - Bike Lanes.png',
   },
   {
-    'name': 'Temple Univeristy Bike Lanes (Methodology Maps)',
+    'name': 'Temple University Bike Lanes (Methodology Maps)',
     'image': 'assets/gis/Site Selection (Methodology)- Bike Lanes.png',
   },
   {
@@ -86,7 +103,7 @@ List nfts = [
     'image':
         'https://lh3.googleusercontent.com/WGCJx8Oq_MnImJM26nedbptGAT4X_umzls2JhiWqmYfuJnHyXCiTApHHkMWocOJXcRdAUvCqGD-CCk8cuVgqjsppWb1xRRDIqQpn=w600',
     'link':
-        'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/108066343708887524339820302445796842548124428363067039062180393642743721623553',
+        'https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/108066343708887524339820302445796842548124428363067039062180393641644209995777',
     'collection': 'Urban Maps'
   },
 ];

@@ -96,10 +96,12 @@ class NFTS extends StatelessWidget {
                                                   nftsToShow[index]['name'],
                                                   textAlign: TextAlign.center,
                                                   style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 24,
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                                                    color: Colors.white,
+                                                    fontSize: 24,
+                                                    fontWeight: FontWeight.bold,
+                                                    decoration: TextDecoration
+                                                        .underline,
+                                                  ),
                                                 ),
                                                 if (nftsToShow[index]['link'] !=
                                                     '')

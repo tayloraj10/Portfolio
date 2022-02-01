@@ -27,10 +27,16 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   String dropdownValue = '';
-  List<String> pages = ['', 'Programming', 'GIS', 'NFTs', 'Resume'];
+  List<String> pages = [
+    'Select a Page',
+    'Programming',
+    'GIS',
+    'NFTs',
+    'Resume'
+  ];
 
   void setDropdownValue() {
-    if (widget.home) setState(() => dropdownValue = '');
+    if (widget.home) setState(() => dropdownValue = 'Select a Page');
     if (widget.programming) setState(() => dropdownValue = 'Programming');
     if (widget.gis) setState(() => dropdownValue = 'GIS');
     if (widget.nfts) setState(() => dropdownValue = 'NFTs');

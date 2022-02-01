@@ -37,45 +37,52 @@ class Home extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AnimatedTextKit(
-                        animatedTexts: [
-                          ColorizeAnimatedText(
-                            "Taylor Johnson's Portfolio Website",
-                            textStyle: TextStyle(fontSize: 32),
-                            colors: colorizeColors,
-                            speed: Duration(milliseconds: 300),
-                          ),
-                        ],
-                        repeatForever: true,
-                      ),
-                      // Text(
-                      //   "Taylor Johnson's Portfolio Website",
-                      //   style: TextStyle(fontSize: 32, color: Colors.white),
-                      //   textAlign: MediaQuery.of(context).size.width <= 500
-                      //       ? TextAlign.center
-                      //       : null,
-                      // ),
+                      MediaQuery.of(context).size.width > 500
+                          ? AnimatedTextKit(
+                              animatedTexts: [
+                                ColorizeAnimatedText(
+                                  "Taylor Johnson's Portfolio Website",
+                                  textStyle: TextStyle(fontSize: 32),
+                                  colors: colorizeColors,
+                                  speed: Duration(milliseconds: 300),
+                                ),
+                              ],
+                              repeatForever: true,
+                            )
+                          : Text(
+                              "Taylor Johnson's Portfolio Website",
+                              style:
+                                  TextStyle(fontSize: 32, color: Colors.blue),
+                              textAlign:
+                                  MediaQuery.of(context).size.width <= 500
+                                      ? TextAlign.center
+                                      : null,
+                            ),
                       SizedBox(
                         height: 8,
                       ),
-                      DefaultTextStyle(
-                        style: TextStyle(fontSize: 18, color: Colors.white),
-                        child: AnimatedTextKit(
-                          animatedTexts: [
-                            TypewriterAnimatedText(
-                                "Please enjoy a selection of projects I've worked on",
-                                speed: Duration(milliseconds: 75)),
-                          ],
-                          repeatForever: true,
-                        ),
-                      ),
-                      // Text(
-                      //   "Please enjoy a selection of projects I've worked on",
-                      //   style: TextStyle(fontSize: 18, color: Colors.white),
-                      //   textAlign: MediaQuery.of(context).size.width <= 500
-                      //       ? TextAlign.center
-                      //       : null,
-                      // ),
+                      MediaQuery.of(context).size.width > 500
+                          ? DefaultTextStyle(
+                              style:
+                                  TextStyle(fontSize: 18, color: Colors.white),
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                      "Please enjoy a selection of projects I've worked on",
+                                      speed: Duration(milliseconds: 75)),
+                                ],
+                                repeatForever: true,
+                              ),
+                            )
+                          : Text(
+                              "Please enjoy a selection of projects I've worked on",
+                              style:
+                                  TextStyle(fontSize: 18, color: Colors.white),
+                              textAlign:
+                                  MediaQuery.of(context).size.width <= 500
+                                      ? TextAlign.center
+                                      : null,
+                            ),
                     ],
                   ),
                   SizedBox(
