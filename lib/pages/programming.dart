@@ -7,6 +7,12 @@ import 'package:portfolio/projects.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Programming extends StatelessWidget {
+  Map imageMapping = {
+    'Flutter': 'flutter.png',
+    'React': 'react.png',
+    'Python': 'python.png'
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,6 +136,39 @@ class Programming extends StatelessWidget {
                                                   size: 40),
                                             ),
                                         ],
+                                      ),
+                                    ),
+                                  if (programmingProjects[index]
+                                      .containsKey("language"))
+                                    Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 10),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            if (programmingProjects[index]
+                                                    ['language'][0] !=
+                                                'Flutter')
+                                              Image.asset(
+                                                "assets/logos/${imageMapping[programmingProjects[index]['language'][0]]}",
+                                                height: 40,
+                                              ),
+                                            if (programmingProjects[index]
+                                                    ['language'][0] ==
+                                                'Flutter')
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 8),
+                                                child: FlutterLogo(
+                                                  size: 70,
+                                                  style:
+                                                      FlutterLogoStyle.stacked,
+                                                ),
+                                              ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   if (programmingProjects[index]

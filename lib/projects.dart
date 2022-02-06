@@ -13,6 +13,7 @@ List programmingProjects = [
     'description':
         "This is a new cross-platform mobile app I'm working on with a startup seeking to connect players looking for private sports coaching to qualified coaches.\n\nI'm building this app using Flutter to allow for one code base to be used to deploy android and iOS apps simultaneously.\n\nThe app is currently in development and beginning alpha testing. It will be available on the google play store and app store soon!",
     'image': 'assets/programming/mprove.png',
+    'language': ['Flutter'],
   },
   {
     'name': 'UPick',
@@ -24,7 +25,17 @@ List programmingProjects = [
       'android':
           'https://play.google.com/store/apps/details?id=com.upick.upickapp',
       'ios': 'https://apps.apple.com/us/app/upick-movies/id1570321941'
-    }
+    },
+    'language': ['Flutter'],
+  },
+  {
+    'name': 'Wordle Clone',
+    'description':
+        "A simple clone of the popular word game Wordle. I built this in react just for some practice and I'm planning to continue adding onto this and making it a 1 to 1 clone to the real Wordle game.",
+    'image': 'assets/programming/wordle_clone.png',
+    'link': 'https://wordle-clone-38bd8.web.app/',
+    'repo': 'https://github.com/tayloraj10/wordle-clone',
+    'language': ['React'],
   },
   {
     'name': 'Phlask',
@@ -32,7 +43,8 @@ List programmingProjects = [
         'Phlask is an open-source, non-profit project for finding and sharing water sources within the Philadelphia area. The project has the dual intention of challenging the social norm of having to purchase water when there is a public or private water tap present and of providing a technological platform for the public to locate and share known sources of water. This project started through Code for Philly (a group of civic minded technologists building projects for the social good)\n\nI joined the project shortly after it began as the first developer. I built the first web app (pictured below) using mostly vanilla JavaScript and Google Maps APIs. As the project grew we decided to do a re-write in react and I helped port over my existing code and wrote some of the other front-end features. During this re-write I transitioned over to maintaining the databases behind the web app and leading data enhancement and gathering projects.',
     'image': 'assets/programming/phlask.png',
     'link': 'https://phlask.me/',
-    'repo': 'https://github.com/phlask/phlask-map'
+    'repo': 'https://github.com/phlask/phlask-map',
+    'language': ['React'],
   },
   {
     'name': 'Online Geocoder',
@@ -40,14 +52,16 @@ List programmingProjects = [
     'description':
         'A custom geocoding web application I wrote for a previous job for internal use. We would often need to get coordinates for large lists of addresses on a daily basis. When the online service we had been using went down I took the opportunity to write my own and then we started using it daily in place of the old service.',
     'repo': 'https://github.com/online-geocoder/online-geocoder.github.io',
-    'link': 'https://online-geocoder.github.io/'
+    'link': 'https://online-geocoder.github.io/',
+    'language': ['Python'],
   },
   {
     'name': 'RDP Python Algorithm',
     'description':
         'An implementation of the Ramer–Douglas–Peucker algorithm for generalizing cartographic features in Python. I wrote this script for a project in a Python class I took in college.',
     'image': 'assets/programming/rdp.png',
-    'repo': 'https://github.com/tayloraj10/RDP'
+    'repo': 'https://github.com/tayloraj10/RDP',
+    'language': ['Python'],
   },
   {
     'name': 'Old Portfolio Site',
