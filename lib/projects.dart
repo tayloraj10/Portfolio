@@ -38,6 +38,15 @@ List programmingProjects = [
     'language': ['React'],
   },
   {
+    'name': 'Slot Machine',
+    'description':
+        "A basic MVP of a slot machine I created to help solidify my understanding of angular components and services when learning the front end framework.",
+    'image': 'assets/programming/slot_machine.png',
+    'link': 'https://angular-slot-machine.web.app/',
+    'repo': 'https://github.com/tayloraj10/Angular-Slot-Machine',
+    'language': ['Angular'],
+  },
+  {
     'name': 'Phlask',
     'description':
         'Phlask is an open-source, non-profit project for finding and sharing water sources within the Philadelphia area. The project has the dual intention of challenging the social norm of having to purchase water when there is a public or private water tap present and of providing a technological platform for the public to locate and share known sources of water. This project started through Code for Philly (a group of civic minded technologists building projects for the social good)\n\nI joined the project shortly after it began as the first developer. I built the first web app (pictured below) using mostly vanilla JavaScript and Google Maps APIs. As the project grew we decided to do a re-write in react and I helped port over my existing code and wrote some of the other front-end features. During this re-write I transitioned over to maintaining the databases behind the web app and leading data enhancement and gathering projects.',

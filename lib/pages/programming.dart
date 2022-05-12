@@ -10,7 +10,8 @@ class Programming extends StatelessWidget {
   Map imageMapping = {
     'Flutter': 'flutter.png',
     'React': 'react.png',
-    'Python': 'python.png'
+    'Python': 'python.png',
+    'Angular': 'angular.png',
   };
 
   @override
